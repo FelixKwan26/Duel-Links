@@ -7,52 +7,40 @@ function getParameterByName(name, url) {
     if (!results[2]) return "";
     return decodeURIComponent(results[2].replace(/\+/g, " "));
   }
+//   var id = getParameterByName("id");
+//   if (id) {
+//     characterProfile(id);
+//   } else {
+//     characterProfile();
+//   }
   var deckProfile = function() {
     $.getJSON(
-        "https://api.airtable.com/v0/appQ8HG6GId3TrnQO/Characters?maxRecords=3&view=Grid%20view",
+        "https://api.airtable.com/v0/appQ8HG6GId3TrnQO/Characters?api_key=key9Nf2BRCQrL6t6n",
       function(airtable) {
         var html = [];
         $.each(airtable.records, function(index, record) {
           var id = record.id;
-          var decks = record.fields["Meta Decks"];
-          var skills = record.fields["Skills"];
+          var name = record.fields["Name"];
+          var description = record.fields["Description"];
           var photo = record.fields["Photo"];
-          html.push(listView(id, decks, skills, photo));
+          html.push(listView(id, name, description, photo));
         });
         $(".list-view").append(html);
       }
     );
   };
-  var listView = function(id, decks, skills, photo) {
+  var listView = function(id, name, description, photo) {
     return `
-     <p>${decks}</p>
-    `;
-  };
-  var id = getParameterByName("id");
-  if (id) {
-    deckProfile(id);
-  } else {
-    deckProfile();
-  }
-var deckProfile = function() {
-    $.getJSON(
-      "https://api.airtable.com/v0/appQ8HG6GId3TrnQO/Deck%20Profile?api_key=key9Nf2BRCQrL6t6n",
-      function(airtable) {
-        var html = [];
-        $.each(airtable.records, function(index, record) {
-          var id = record.id;
-          var decks = record.fields["Meta Decks"];
-          var skills = record.fields["Skills"];
-          var photo = record.fields["Photo"];
-          html.push(listView(id, decks, skills, photo));
-        });
-        $(".list-view").append(html);
-      }
-    );
-  };
-  var listView = function(id, decks, skills, photo) {
-    return `
-     <p></p>
+    <div class="card-group">
+    <div class="card">
+    ${photo ? `<img src="${photo[0].url}">` : ``}
+      <div class="card-body">
+        <h5 class="card-title">${name}</h5>
+        <p class="card-text">${description}</p>
+    
+      </div>
+    </div>
+    </div>
     `;
   };
   var id = getParameterByName("id");

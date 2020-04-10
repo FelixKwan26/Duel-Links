@@ -1,5 +1,25 @@
-body { background-image: url('magicianofdarkillusion.jpg'); 
+.card img {
+    max-width: 100%;
+    width: 265px;
+    height: 265px;
+  }
+  .card {
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-top: 10px;
+    height: 500px;
+    opacity: 0.9;
+  }
+  .list-view {
+    display: flex inline-block;
+    columns: 3;
+    margin-left: 180px;
+    width: 90%;
+  }
+ 
+body { background-image: url('logo.jpg'); 
     background-repeat: no-repeat;
-     background-attachment: fixed;
-    background-size: cover; }
-    
+    background-attachment: fixed;
+   background-size: cover; 
+} 
+
