@@ -7,19 +7,35 @@
     margin-bottom: 30px;
     padding-left: 10px;
     padding-top: 10px;
-    height: 500px;
+    height: 550px;
+
     opacity: 0.9;
   }
   .list-view {
     display: flex inline-block;
     columns: 3;
-    margin-left: 180px;
-    width: 90%;
+    margin-left: 185px;
+    width: 75%;
   }
  
 body { background-image: url('logo.jpg'); 
     background-repeat: no-repeat;
     background-attachment: fixed;
    background-size: cover; 
+   
 } 
-
+.h3{
+    text-align: center;
+}
+.h1{
+    background-color: rgba(61, 61, 61, 0.541);
+    color:white ; 
+    text-align: center;
+    font-weight: bold;
+}
+#intro {
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-top: 10px;
+    height: 200px;
+}
