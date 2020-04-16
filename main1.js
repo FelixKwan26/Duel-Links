@@ -15,15 +15,14 @@ function getParameterByName(name, url) {
 //   }
   var deckProfile = function() {
     $.getJSON(
-        "https://api.airtable.com/v0/appQ8HG6GId3TrnQO/Characters?api_key=key9Nf2BRCQrL6t6n",
+        "https://api.airtable.com/v0/appQ8HG6GId3TrnQO/Joey?api_key=key9Nf2BRCQrL6t6n",
       function(airtable) {
         var html = [];
         $.each(airtable.records, function(index, record) {
           var id = record.id;
-          var name = record.fields["Name"];
-          var description = record.fields["Description"];
-          var photo = record.fields["Photo"];
-          html.push(listView(id, name, description, photo));
+          var description = record.fields["How to Obtain"];
+          var photo = record.fields["Photos"];
+          html.push(listView(id,photo,description));
         });
         $(".list-view").append(html);
       }
@@ -34,9 +33,9 @@ function getParameterByName(name, url) {
     return `
     <div class="card-group">
     <div class="card text-white bg-dark mb-3">
-    ${photo ? `<a href="index1.html"><img src="${photo[0].url}"> </a>` : ``}
+    ${photo ? `<img src="${photo[0].url}"> ` : ``}
       <div class="card-body">
-        <h5 class="card-title">${name}</h5>
+        <h5 class="card-title"></h5>
         <p class="card-text">${description}</p>
     
       </div>

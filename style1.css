@@ -1,0 +1,41 @@
+.card img {
+    max-width: 100%;
+    width: 500px;
+    height: 265px;
+  }
+  .card {
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-top: 10px;
+    height: 300px;
+
+    opacity: 0.9;
+  }
+  .list-view {
+    display: flex inline-block;
+    columns: 6;
+    margin-left: 0px;
+    width: 100%;
+  }
+ 
+body { background-image: url('logo.jpg'); 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   background-size: cover; 
+   
+} 
+.h3{
+    text-align: center;
+}
+.h1{
+    background-color: rgba(61, 61, 61, 0.541);
+    color:white ; 
+    text-align: center;
+    font-weight: bold;
+}
+#intro {
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-top: 10px;
+    height: 200px;
+}
