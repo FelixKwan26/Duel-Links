@@ -20,26 +20,28 @@ function getParameterByName(name, url) {
         var html = [];
         $.each(airtable.records, function(index, record) {
           var id = record.id;
-          var description = record.fields["How to Obtain"];
+          //var description = record.fields["How to Obtain"];
           var photo = record.fields["Photos"];
-          html.push(listView(id,photo,description));
+          html.push(listView(id, photo));
         });
         $(".list-view").append(html);
       }
     );
   };
 
-  var listView = function(id, name, description, photo) {
+  var listView = function(id, photo,) {
     return `
-    <div class="card-group">
-    <div class="card text-white bg-dark mb-3">
+    
+    <div class="col-sm-3">
+        <div class="card-group hover">
+            <div class="card text-white bg-dark mb-3">
     ${photo ? `<img src="${photo[0].url}"> ` : ``}
       <div class="card-body">
         <h5 class="card-title"></h5>
-        <p class="card-text">${description}</p>
     
-      </div>
     </div>
+      </div>
+     </div>
     </div>
     `;
   };

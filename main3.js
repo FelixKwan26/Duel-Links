@@ -15,32 +15,33 @@ function getParameterByName(name, url) {
 //   }
   var deckProfile = function() {
     $.getJSON(
-        "https://api.airtable.com/v0/appQ8HG6GId3TrnQO/Characters?api_key=key9Nf2BRCQrL6t6n",
+        "https://api.airtable.com/v0/appQ8HG6GId3TrnQO/Kaiba?api_key=key9Nf2BRCQrL6t6n",
       function(airtable) {
         var html = [];
         $.each(airtable.records, function(index, record) {
           var id = record.id;
-          var name = record.fields["Name"];
-          var description = record.fields["Description"];
-          var photo = record.fields["Photo"];
-          html.push(listView(id, name, description, photo));
+          //var description = record.fields["How to Obtain"];
+          var photo = record.fields["Photos"];
+          html.push(listView(id, photo));
         });
         $(".list-view").append(html);
       }
     );
   };
 
-  var listView = function(id, name, description, photo) {
+  var listView = function(id, photo,) {
     return `
-    <div class="card-group">
-    <div class="card text-white bg-dark mb-3">
-    ${photo ? `<a href="index3.html"><img src="${photo[0].url}"> </a>` : ``}
-      <div class="card-body">
-        <h5 class="card-title">${name}</h5>
-        <p class="card-text">${description}</p>
     
-      </div>
+    <div class="col-sm-3">
+        <div class="card-group hover">
+            <div class="card text-white bg-dark mb-3">
+    ${photo ? `<img src="${photo[0].url}"> ` : ``}
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+    
     </div>
+      </div>
+     </div>
     </div>
     `;
   };

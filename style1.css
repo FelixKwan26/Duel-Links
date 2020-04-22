@@ -1,12 +1,12 @@
 .card img {
     max-width: 100%;
-    width: 500px;
-    height: 265px;
+    width: 600px;
+    height: 300px;
   }
   .card {
     margin-bottom: 30px;
-    padding-left: 10px;
-    padding-top: 10px;
+    padding-left: 0px;
+    padding-top: -10px;
     height: 300px;
 
     opacity: 0.9;
@@ -14,7 +14,7 @@
   .list-view {
     display: flex inline-block;
     columns: 6;
-    margin-left: 0px;
+    margin-left: 200px;
     width: 100%;
   }
  
@@ -38,4 +38,11 @@ body { background-image: url('logo.jpg');
     padding-left: 10px;
     padding-top: 10px;
     height: 200px;
+}
+.hover:hover{
+    transform:scale(1.2);
+}
+.center{
+    padding-left: 30%;
+    width: 1000px;
 }
