@@ -15,7 +15,7 @@ function getParameterByName(name, url) {
 //   }
   var deckProfile = function() {
     $.getJSON(
-        "https://api.airtable.com/v0/appQ8HG6GId3TrnQO/Joey?api_key=key9Nf2BRCQrL6t6n",
+        "https://api.airtable.com/v0/appQ8HG6GId3TrnQO/Joey?api_key=key9Nf2BRCQrL6t6n&view=joey",
       function(airtable) {
         var html = [];
         $.each(airtable.records, function(index, record) {
@@ -48,7 +48,7 @@ function getParameterByName(name, url) {
 
   var getOneRecord = function(id) {
     $.getJSON(
-      `https://api.airtable.com/v0/appQ8HG6GId3TrnQO/Joey/${id}?api_key=key9Nf2BRCQrL6t6n` ,
+      `https://api.airtable.com/v0/appQ8HG6GId3TrnQO/Joey/${id}?api_key=key9Nf2BRCQrL6t6n&view=joey` ,
       function(record) {
         var html = [];
         var picture = record.fields["Photo"];

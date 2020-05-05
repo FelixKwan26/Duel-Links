@@ -15,7 +15,7 @@ function getParameterByName(name, url) {
 //   }
   var deckProfile = function() {
     $.getJSON(
-        "https://api.airtable.com/v0/appQ8HG6GId3TrnQO/Kaiba?api_key=key9Nf2BRCQrL6t6n",
+        "https://api.airtable.com/v0/appQ8HG6GId3TrnQO/Kaiba?api_key=key9Nf2BRCQrL6t6n&view=kaiba",
       function(airtable) {
         var html = [];
         $.each(airtable.records, function(index, record) {

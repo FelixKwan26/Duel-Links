@@ -34,43 +34,42 @@ function getParameterByName(name, url) {
     return `
     <div class="card-group">
     <div class="card text-white bg-dark mb-3">
-    ${photo ? `<a href="index3.html"><img src="${photo[0].url}"> </a>` : ``}
+    ${photo ? `<img src="${photo[0].url}"> ` : ``}
       <div class="card-body">
         <h5 class="card-title">${name}</h5>
         <p class="card-text">${description}</p>
-    
       </div>
     </div>
     </div>
     `;
   };
 
-  var getOneRecord = function(id) {
-    $.getJSON(
-      `https://api.airtable.com/v0/appQ8HG6GId3TrnQO/Joey/${id}?api_key=key9Nf2BRCQrL6t6n` ,
-      function(record) {
-        var html = [];
-        var picture = record.fields["Photo"];
-        var pack = record.fields["How to Obtain"]
-        html.push(detailView(picture, pack,));
-        $(".detail-view").append(html);
-      }
-    );
-  };
+//   var getOneRecord = function(id) {
+//     $.getJSON(
+//       `https://api.airtable.com/v0/appQ8HG6GId3TrnQO/Joey/${id}?api_key=key9Nf2BRCQrL6t6n` ,
+//       function(record) {
+//         var html = [];
+//         var picture = record.fields["Photo"];
+//         var pack = record.fields["How to Obtain"]
+//         html.push(detailView(picture, pack,));
+//         $(".detail-view").append(html);
+//       }
+//     );
+//   };
 
-  var detailView = function(picture, pack) {
-    return `
-    <div class="card-group">
-    <div class="card text-white bg-dark mb-3">
-    ${picture ? `<img src="${picture[0].url}">` : ``}
-      <div class="card-body">
-        <p class="card-text">${pack}</p>
+//   var detailView = function(picture, pack) {
+//     return `
+//     <div class="card-group">
+//     <div class="card text-white bg-dark mb-3">
+//     ${picture ? `<img src="${picture[0].url}">` : ``}
+//       <div class="card-body">
+//         <p class="card-text">${pack}</p>
     
-      </div>
-    </div>
-    </div>
-    `;
-  };
+//       </div>
+//     </div>
+//     </div>
+//     `;
+//   };
   
   var id = getParameterByName("id");
   if (id) {
